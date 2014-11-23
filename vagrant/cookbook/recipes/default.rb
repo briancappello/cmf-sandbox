@@ -76,8 +76,8 @@ service "jackrabbit" do
   action :start
 end
 
-{ "/vagrant/app/config/parameters.yml.dist" =>  "/vagrant/app/config/parameters.yml",
-  "/vagrant/app/config/phpcr_jackrabbit.yml.dist" => "/vagrant/app/config/phpcr.yml" }.each do | src, dest |
+{ "/vagrant/app/config/parameters.yml.dist" =>  "/vagrant/app/config/parameters.yml"
+}.each do | src, dest |
   file dest  do
     content IO.read(src)
   end

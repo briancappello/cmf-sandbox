@@ -16,6 +16,8 @@ class AppKernel extends Kernel
             new Symfony\Bundle\SwiftmailerBundle\SwiftmailerBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
+            new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             // enable cmf bundles
@@ -49,13 +51,20 @@ class AppKernel extends Kernel
             new Sandbox\TestBundle\SandboxTestBundle(),
 
             // admin bundle
+            new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Sonata\jQueryBundle\SonatajQueryBundle(),
             new Sonata\BlockBundle\SonataBlockBundle(),
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
+            new \Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+
+            // user support
+            new FOS\UserBundle\FOSUserBundle(),
+            new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
+            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
 
             // Media support
             new Liip\ImagineBundle\LiipImagineBundle(),

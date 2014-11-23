@@ -1,6 +1,5 @@
 imports:
     - { resource: parameters.yml }
-    - { resource: phpcr.yml }
     - { resource: security.yml }
 
 framework:
@@ -59,8 +58,16 @@ doctrine:
         dbname:   %database_name%
         user:     %database_user%
         password: %database_password%
-        path:     %database_path%
         charset:  UTF8
+        types:
+            json: Sonata\Doctrine\Types\JsonType
+    orm:
+        entity_managers:
+            default:
+                mappings:
+                    ApplicationSonataUserBundle: ~
+                    SonataUserBundle: ~
+                    FOSUserBundle: ~
 
 # cmf configuration
 doctrine_phpcr:
@@ -119,15 +126,27 @@ cmf_routing:
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
-    security:
-        # WARNING: REMOVE THIS FOR PRODUCTION SITES
-        # for demo purposes we are allowing anonymous inline editing
-        role: IS_AUTHENTICATED_ANONYMOUSLY
 
 cmf_seo:
     title: CMF Sandbox - %%content_title%%
     description: The Content Management Framework. %%content_description%%
     alternate_locale: ~
+
+fos_user:
+    db_driver:      orm
+    firewall_name:  main
+    user_class:     Application\Sonata\UserBundle\Entity\User
+
+    group:
+        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_manager: sonata.user.orm.group_manager
+
+    service:
+        user_manager: sonata.user.orm.user_manager
+
+sonata_user:
+    security_acl: false
+    manager_type: orm # can be orm or mongodb
 
 sonata_block:
     default_contexts: [cms]
@@ -140,6 +159,9 @@ sonata_block:
             settings:
                 id: '/cms'
             contexts:   [admin]
+        sonata.user.block.menu:    ~
+        sonata.user.block.account: ~
+        sonata.block.service.text: ~
     blocks_by_class:
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock:
             cache: cmf.block.cache.js_async
