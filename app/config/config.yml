@@ -65,7 +65,7 @@ doctrine:
         entity_managers:
             default:
                 mappings:
-                    ApplicationSonataUserBundle: ~
+                    ApplicationUserBundle: ~
                     SonataUserBundle: ~
                     FOSUserBundle: ~
 
@@ -79,33 +79,35 @@ doctrine_phpcr:
         password: %phpcr_pass%
     # enable the ODM layer
     odm:
-        auto_mapping: true
         auto_generate_proxy_classes: %kernel.debug%
         locales:
             en:
-                - de
                 - fr
-            de:
-                - en
-                - fr
-            fr:
-                - en
-                - de
+        document_managers:
+            default:
+                auto_mapping: false
 
 knp_menu:
     twig: true
+
+cmf_menu:
+    persistence:
+        phpcr:
+            menu_basepath: /cms
+            content_basepath: /cms
 
 cmf_core:
     multilang:
         locales: %locales%
     persistence:
         phpcr:
+            basepath: /cms
             enabled: true
 
 cmf_content:
     persistence:
         phpcr:
-            document_class: Sandbox\MainBundle\Document\DemoSeoContent
+            content_basepath: /cms
 
 cmf_routing:
     chain:
@@ -113,16 +115,18 @@ cmf_routing:
             cmf_routing.dynamic_router: 20
             router.default: 100
     dynamic:
+        enabled: true
+        persistence:
+            phpcr:
+                admin_basepath: /cms
+                route_basepaths: [/cms/pages]
+                content_basepath: /cms
         route_collection_limit: 10
-        controllers_by_type:
-            demo_type: sandbox_main.controller:typeAction
         controllers_by_class:
-            Sandbox\MainBundle\Document\DemoClassContent: sandbox_main.controller:classAction
+            Pellr\CmsBundle\Doctrine\Phpcr\Page: cmf_content.controller:indexAction
             Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\RedirectRoute:  cmf_routing.redirect_controller:redirectAction
-
         templates_by_class:
-            Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:  CmfSimpleCmsBundle:Page:index.html.twig
-            Symfony\Cmf\Bundle\ContentBundle\Doctrine\Phpcr\StaticContent: SandboxMainBundle:StaticContent:index.html.twig
+            Pellr\CmsBundle\Doctrine\Phpcr\Page: base.html.twig
 
 cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
@@ -135,10 +139,10 @@ cmf_seo:
 fos_user:
     db_driver:      orm
     firewall_name:  main
-    user_class:     Application\Sonata\UserBundle\Entity\User
+    user_class:     Application\UserBundle\Entity\User
 
     group:
-        group_class:   Application\Sonata\UserBundle\Entity\Group
+        group_class:   Application\UserBundle\Entity\Group
         group_manager: sonata.user.orm.group_manager
 
     service:
@@ -146,7 +150,7 @@ fos_user:
 
 sonata_user:
     security_acl: false
-    manager_type: orm # can be orm or mongodb
+    manager_type: orm
 
 sonata_block:
     default_contexts: [cms]
@@ -195,24 +199,21 @@ sonata_admin:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
 
-    templates:
-        layout:     SandboxMainBundle:Admin:custom_layout.html.twig
-        user_block: SandboxMainBundle:Admin:user_block.html.twig
     dashboard:
         blocks:
             - { position: right, type: sonata.admin.block.admin_list }
             - { position: left, type: sonata_admin_doctrine_phpcr.tree_block }
         groups:
-            content:
-                label: Content
-                items:
-                    - cmf_content.admin
-                    - cmf_block.simple_admin
-                    - cmf_block.container_admin
-                    - cmf_block.reference_admin
-                    - cmf_block.action_admin
-                    - cmf_block.imagine.slideshow_admin
-                    - cmf_block.imagine.imagine_admin
+#            content:
+#                label: Content
+#                items:
+#                    - cmf_content.admin
+#                    - cmf_block.simple_admin
+#                    - cmf_block.container_admin
+#                    - cmf_block.reference_admin
+#                    - cmf_block.action_admin
+#                    - cmf_block.imagine.slideshow_admin
+#                    - cmf_block.imagine.imagine_admin
             routing:
                 label: URLs
                 items:
@@ -223,10 +224,10 @@ sonata_admin:
                 items:
                     - cmf_menu.menu_admin
                     - cmf_menu.node_admin
-            simplecms:
-                label: Simple CMS
+            cms_pages:
+                label: CMS Pages
                 items:
-                    - cmf_simple_cms.persistence.phpcr.admin.page
+                    - pellr_cms.persistence.phpcr.admin.page
 
 sonata_doctrine_phpcr_admin:
     document_tree_defaults: [locale]
@@ -234,14 +235,6 @@ sonata_doctrine_phpcr_admin:
         Doctrine\ODM\PHPCR\Document\Generic:
             valid_children:
                 - all
-        Sandbox\MainBundle\Document\DemoSeoContent:
-            valid_children:
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SimpleBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ContainerBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
-                - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ReferenceBlock:
             valid_children: []
         Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock:
@@ -263,9 +256,9 @@ sonata_doctrine_phpcr_admin:
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\ActionBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\SlideshowBlock
                 - Symfony\Cmf\Bundle\BlockBundle\Doctrine\Phpcr\RssBlock
-        Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page:
+        Pellr\CmsBundle\Doctrine\Phpcr\Page:
             valid_children:
-                - Symfony\Cmf\Bundle\SimpleCmsBundle\Doctrine\Phpcr\Page
+                - Pellr\CmsBundle\Doctrine\Phpcr\Page
         Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route:
             valid_children:
                 - Symfony\Cmf\Bundle\RoutingBundle\Doctrine\Phpcr\Route
@@ -279,13 +272,12 @@ sonata_doctrine_phpcr_admin:
             valid_children:
                 - Symfony\Cmf\Bundle\MenuBundle\Doctrine\Phpcr\MenuNode
 
-
 sonata_seo:
     page:
-        title: CMF Sandbox
+        title: %sonata_seo_page_title%
         metas:
             name:
-                keywords: "CMF, Symfony, Routing, Content, PHPCR"
+                keywords: %sonata_seo_page_meta_keywords%
 
 sensio_framework_extra:
     router:  { annotations: true }
@@ -300,14 +292,6 @@ cmf_search:
             search_fields:
                 title: title
                 summary: body
-
-lunetics_locale:
-    strict_mode: true
-    guessing_order:
-        - router
-        - cookie
-        - browser
-    allowed_locales: %locales%
 
 # The LiipImagineBundle can be used if you want to convert on demand an image
 # to a specific format. (ie a controller render the file)
@@ -354,10 +338,6 @@ doctrine_cache:
 jms_serializer:
     metadata:
         auto_detection: true
-        directories:
-            CmfContentBundle:
-                namespace_prefix: "Symfony\Cmf\Bundle\ContentBundle"
-                path: "@SandboxMainBundle/Resources/config/serializer/cmf"
 
 fos_rest:
     view:

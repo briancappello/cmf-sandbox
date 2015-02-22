@@ -1,6 +1,6 @@
 security:
     encoders:
-        Application\Sonata\UserBundle\Entity\User: bcrypt
+        Application\UserBundle\Entity\User: bcrypt
 
     providers:
         fos_userbundle:
@@ -17,11 +17,11 @@ security:
             form_login:
                 provider:       fos_userbundle
                 login_path:     /admin/login
-                use_forward:    false
                 check_path:     /admin/login_check
                 failure_path:   null
             logout:
                 path:           /admin/logout
+                target:         /home
             anonymous:          true
 
         main:

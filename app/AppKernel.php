@@ -17,7 +17,7 @@ class AppKernel extends Kernel
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Doctrine\Bundle\DoctrineBundle\DoctrineBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-            new \Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             // enable cmf bundles
@@ -29,26 +29,19 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
             new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
-            new Symfony\Cmf\Bundle\SimpleCmsBundle\CmfSimpleCmsBundle(),
+            new Pellr\CmsBundle\PellrCmsBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
-            new \Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
+            new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
             new Symfony\Cmf\Bundle\SearchBundle\CmfSearchBundle(),
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
-            new Symfony\Cmf\Bundle\RoutingAutoBundle\CmfRoutingAutoBundle(),
-
-            // language switcher
-            new Lunetics\LocaleBundle\LuneticsLocaleBundle(),
+            new \Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
 
             // create.js editing related
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
             new FOS\RestBundle\FOSRestBundle(),
             new JMS\SerializerBundle\JMSSerializerBundle(),
-
-            // and the sandbox bundle
-            new Sandbox\MainBundle\SandboxMainBundle(),
-            new Sandbox\TestBundle\SandboxTestBundle(),
 
             // admin bundle
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
@@ -57,14 +50,14 @@ class AppKernel extends Kernel
             new Sonata\CoreBundle\SonataCoreBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
             new Sonata\DoctrinePHPCRAdminBundle\SonataDoctrinePHPCRAdminBundle(),
-            new \Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
 
             // user support
             new FOS\UserBundle\FOSUserBundle(),
             new Sonata\UserBundle\SonataUserBundle('FOSUserBundle'),
-            new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new Application\UserBundle\ApplicationUserBundle(),
 
             // Media support
             new Liip\ImagineBundle\LiipImagineBundle(),
@@ -72,9 +65,10 @@ class AppKernel extends Kernel
             // jackalope doctrine caching
             new Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle(),
 
-            // block caching and feeds
+            // block caching
             new Sonata\CacheBundle\SonataCacheBundle(),
-            new Eko\FeedBundle\EkoFeedBundle(),
+
+            new Application\SiteBundle\ApplicationSiteBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

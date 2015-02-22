@@ -1,6 +1,6 @@
 {
-    "name": "symfony-cmf/sandbox",
-    "description": "Demo Sandbox for the Symfony Content Management Framework",
+    "name": "briancappello/symfony-app",
+    "description": "CMS application built with the Symfony Content Management Framework",
     "homepage": "http://cmf.symfony.com",
     "license": "MIT",
     "authors": [
@@ -22,11 +22,11 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~2.3",
         "symfony-cmf/symfony-cmf": "1.2.*",
-        "symfony-cmf/simple-cms-bundle": "1.2.*",
+        "pellr/cms-bundle": "dev-master@dev",
         "symfony-cmf/search-bundle": "1.1.*",
         "symfony-cmf/create-bundle": "1.2.*",
         "symfony-cmf/seo-bundle": "1.1.*",
-        "symfony-cmf/routing-auto-bundle": "1.0.*",
+        "symfony-cmf/routing-bundle": "1.3.*",
         "jackalope/jackalope-doctrine-dbal": "1.1.*",
         "jackalope/jackalope-jackrabbit": "1.1.*",
         "doctrine/doctrine-bundle": "~1.2",
@@ -39,11 +39,11 @@
         "sonata-project/cache-bundle": "~2.1",
         "sonata-project/doctrine-phpcr-admin-bundle": "1.2.*",
         "sonata-project/doctrine-orm-admin-bundle": "~2.3.0",
-        "eko/feedbundle": "~1.0",
-        "lunetics/locale-bundle": "~2.3",
         "liip/imagine-bundle": "~1.0",
         "wjzijderveld/check-bundles": "~1.1",
         "helios-ag/fm-elfinder-bundle": "~1.4",
+        "knplabs/knp-paginator-bundle": "~2.4.1",
+        "nelmio/alice": "~1.7.2",
         "burgov/key-value-form-bundle": "~1.0"
     },
     "require-dev": {
@@ -51,6 +51,12 @@
         "liip/functional-test-bundle": "~1.0",
         "symfony-cmf/testing": "1.2.*"
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:pellr/CmsBundle.git"
+        }
+    ],
     "minimum-stability": "stable",
     "scripts": {
         "post-install-cmd": [

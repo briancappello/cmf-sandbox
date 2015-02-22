@@ -1,0 +1,112 @@
+{% set is_admin = is_granted("ROLE_ADMIN") %}
+{% set margin_top = '60px' %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    {{ sonata_seo_metadatas() }}
+    {{ sonata_seo_link_canonical() }}
+    {{ sonata_seo_lang_alternates() }}
+    {{ sonata_seo_title() }}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+        <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        {% if is_admin %}
+            {% include "CmfCreateBundle::includecssfiles.html.twig" %}
+            <style type="text/css" media="screen">.container { margin-top: {{ margin_top }}; }</style>
+        {% endif %}
+    {% endblock %}
+
+    {% block end_head %}
+    {% endblock %}
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div id="banner" class="span12">
+            <a href="https://github.com/symfony-cmf/cmf-sandbox">
+                <img style="position: absolute; top: {% if is_admin %}{{ margin_top }}{% else %}0{% endif %}; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"/>
+            </a>
+            <div class="hero-unit">
+                <p id="slogan">Symfony2 Content Management Framework</p>
+            </div>
+        </div>
+        {% set currentItem = knp_menu_get('pages').currentItem %}
+        {% if currentItem %}
+            <div id="breadcrumb" class="span10">
+                <ul class="breadcrumb boxed">
+                    {% for title, url in currentItem.breadcrumbsArray %}
+                        <li><a href="{{url}}">{{ title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+    </div>
+
+    <div  class="row">
+        <div id="content-container" class="span12 boxed">
+            <div class="row">
+                <div id="navigation" class="span3">
+                    <div class="well">
+                        {% block navigation %}
+                            <h2>Navigation</h2>
+                            {{ knp_menu_render('pages') }}
+                        {% endblock %}
+                    </div>
+                </div>
+                <div class="span9">
+                    <div id="content">
+                        <div class="inner">
+                            {% block content %}
+
+                                {% if cmfMainContent is defined %}
+                                    {% createphp cmfMainContent as="rdf" %}
+                                        {{ rdf|raw }}
+                                    {% endcreatephp %}
+                                {% endif %}
+
+                            {% endblock %}
+                        </div>
+                    </div>
+
+                    <div id="content_extra">
+                        <div class="inner">
+                            {% block content_extra %}
+                            {% endblock %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr/>
+
+    <div id="footer" class="row">
+        <div id="menu-service">
+            {{ knp_menu_render('pages') }}
+        </div>
+        <div class="span12">
+            {% block footer %}
+                <p>Powered by <a href="http://cmf.symfony.com/">Symfony CMF</a></p>
+            {% endblock %}
+        </div>
+    </div>
+</div>
+
+{% block bottom_scripts %}
+    {% render(controller("cmf_create.jsloader.controller:includeJSFilesAction")) %}
+{% endblock %}
+</body>
+</html>
