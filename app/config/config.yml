@@ -151,6 +151,19 @@ fos_user:
 sonata_user:
     security_acl: false
     manager_type: orm
+    class:
+        user: Application\UserBundle\Entity\User
+        group: Application\UserBundle\Entity\Group
+    admin:
+        user:
+            class:          Sonata\UserBundle\Admin\Entity\UserAdmin
+            controller:     SonataAdminBundle:CRUD
+            translation:    SonataUserBundle
+
+        group:
+            class:          Sonata\UserBundle\Admin\Entity\GroupAdmin
+            controller:     SonataAdminBundle:CRUD
+            translation:    SonataUserBundle
 
 sonata_block:
     default_contexts: [cms]
@@ -258,6 +271,11 @@ sonata_admin:
 #                    - cmf_block.action_admin
 #                    - cmf_block.imagine.slideshow_admin
 #                    - cmf_block.imagine.imagine_admin
+            users:
+                label: Users
+                items:
+                    - sonata.user.admin.user
+                    - sonata.user.admin.group
             routing:
                 label: URLs
                 items:
