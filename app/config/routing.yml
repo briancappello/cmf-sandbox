@@ -7,9 +7,8 @@ home_redirect:
     pattern: /home
     defaults:
         _controller: FrameworkBundle:Redirect:redirect
-        route: /cms/pages
-        statusCode: 301
-        useReferrer: false
+        route: /cms/main
+        permanent: true
 
 admin:
     pattern: /admin

@@ -22,7 +22,6 @@
         "sensio/distribution-bundle": "~3.0",
         "sensio/framework-extra-bundle": "~2.3",
         "symfony-cmf/symfony-cmf": "1.2.*",
-        "pellr/cms-bundle": "dev-master@dev",
         "symfony-cmf/search-bundle": "1.1.*",
         "symfony-cmf/create-bundle": "1.2.*",
         "symfony-cmf/seo-bundle": "1.1.*",
@@ -44,7 +43,8 @@
         "helios-ag/fm-elfinder-bundle": "~1.4",
         "knplabs/knp-paginator-bundle": "~2.4.1",
         "nelmio/alice": "~1.7.2",
-        "burgov/key-value-form-bundle": "~1.0"
+        "burgov/key-value-form-bundle": "~1.0",
+        "pellr/cms-bundle": "dev-master@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
@@ -54,7 +54,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "git@github.com:pellr/CmsBundle.git"
+            "url": "git@github.com:briancappello/CmsBundle.git"
         }
     ],
     "minimum-stability": "stable",

@@ -38,3 +38,7 @@ parameters:
     phpcr_pass: admin
 
     super_admin_password: CHANGE_ME
+    admin_brand: Symfony CMF
+
+    sonata_seo_page_title: 'Symfony CMF'
+    sonata_seo_page_meta_keywords: 'Symfony CMF'

@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4016bb92c1389c680882524833640dd4",
+    "hash": "c2fcddd27fd5dff4e1cd3f97e4a3bae4",
     "packages": [
         {
             "name": "burgov/key-value-form-bundle",
@@ -2805,13 +2805,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/pellr/CmsBundle.git",
-                "reference": "c8d8ad8056711e8c6b3049d6ebefab2f639d9442"
+                "url": "https://github.com/briancappello/CmsBundle.git",
+                "reference": "9dffb36b29090095bccbf7cf0c85839dbc61941b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pellr/CmsBundle/zipball/c8d8ad8056711e8c6b3049d6ebefab2f639d9442",
-                "reference": "c8d8ad8056711e8c6b3049d6ebefab2f639d9442",
+                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/9dffb36b29090095bccbf7cf0c85839dbc61941b",
+                "reference": "9dffb36b29090095bccbf7cf0c85839dbc61941b",
                 "shasum": ""
             },
             "require": {
@@ -2862,10 +2862,10 @@
                 "Symfony CMF"
             ],
             "support": {
-                "source": "https://github.com/pellr/CmsBundle/tree/master",
-                "issues": "https://github.com/pellr/CmsBundle/issues"
+                "source": "https://github.com/briancappello/CmsBundle/tree/master",
+                "issues": "https://github.com/briancappello/CmsBundle/issues"
             },
-            "time": "2014-11-30 05:37:52"
+            "time": "2015-02-26 02:51:25"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -5633,8 +5633,8 @@
     ],
     "minimum-stability": "stable",
     "stability-flags": {
-        "pellr/cms-bundle": 20,
-        "doctrine/migrations": 20
+        "doctrine/migrations": 20,
+        "pellr/cms-bundle": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
