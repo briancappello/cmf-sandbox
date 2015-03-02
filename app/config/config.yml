@@ -119,7 +119,7 @@ cmf_routing:
         persistence:
             phpcr:
                 admin_basepath: /cms
-                route_basepaths: [/cms/main]
+                route_basepaths: [/cms/home]
                 content_basepath: /cms
         route_collection_limit: 10
         controllers_by_class:
