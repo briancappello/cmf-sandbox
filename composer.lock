@@ -2806,12 +2806,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/briancappello/CmsBundle.git",
-                "reference": "9dffb36b29090095bccbf7cf0c85839dbc61941b"
+                "reference": "e0521254a6e4b4909823c2d3788f17131c64caa1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/9dffb36b29090095bccbf7cf0c85839dbc61941b",
-                "reference": "9dffb36b29090095bccbf7cf0c85839dbc61941b",
+                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/e0521254a6e4b4909823c2d3788f17131c64caa1",
+                "reference": "e0521254a6e4b4909823c2d3788f17131c64caa1",
                 "shasum": ""
             },
             "require": {
@@ -2865,7 +2865,7 @@
                 "source": "https://github.com/briancappello/CmsBundle/tree/master",
                 "issues": "https://github.com/briancappello/CmsBundle/issues"
             },
-            "time": "2015-02-26 02:51:25"
+            "time": "2015-03-02 05:01:20"
         },
         {
             "name": "phpcollection/phpcollection",
