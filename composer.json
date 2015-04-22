@@ -44,6 +44,7 @@
         "knplabs/knp-paginator-bundle": "~2.4.1",
         "nelmio/alice": "~1.7.2",
         "burgov/key-value-form-bundle": "~1.0",
+        "genemu/form-bundle": "*",
         "pellr/cms-bundle": "dev-master@dev"
     },
     "require-dev": {

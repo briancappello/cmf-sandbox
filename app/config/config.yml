@@ -90,6 +90,13 @@ doctrine_phpcr:
 knp_menu:
     twig: true
 
+genemu_form:
+    date:
+        enabled: true
+        configs:
+            dateFormat: 'm/d/yy'
+    select2: ~
+
 cmf_menu:
     persistence:
         phpcr:

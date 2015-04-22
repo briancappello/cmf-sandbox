@@ -29,7 +29,6 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\ContentBundle\CmfContentBundle(),
             new Symfony\Cmf\Bundle\TreeBrowserBundle\CmfTreeBrowserBundle(),
             new Symfony\Cmf\Bundle\BlockBundle\CmfBlockBundle(),
-            new Pellr\CmsBundle\PellrCmsBundle(),
             new Symfony\Cmf\Bundle\SeoBundle\CmfSeoBundle(),
             new Burgov\Bundle\KeyValueFormBundle\BurgovKeyValueFormBundle(),
             new Liip\SearchBundle\LiipSearchBundle(),
@@ -37,6 +36,7 @@ class AppKernel extends Kernel
             new Symfony\Cmf\Bundle\MediaBundle\CmfMediaBundle(),
             new FM\ElfinderBundle\FMElfinderBundle(),
             new \Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
+            new \Genemu\Bundle\FormBundle\GenemuFormBundle(),
 
             // create.js editing related
             new Symfony\Cmf\Bundle\CreateBundle\CmfCreateBundle(),
@@ -68,6 +68,7 @@ class AppKernel extends Kernel
             // block caching
             new Sonata\CacheBundle\SonataCacheBundle(),
 
+            new Pellr\CmsBundle\PellrCmsBundle(),
             new Application\SiteBundle\ApplicationSiteBundle(),
         );
 
