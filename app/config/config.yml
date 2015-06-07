@@ -21,7 +21,10 @@ twig:
     strict_variables: %kernel.debug%
     form:
         resources:
+            - 'Form/fields.html.twig'
             - 'CmfMediaBundle:Form:fields.html.twig'
+            - 'SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig'
+            - 'SonataDoctrinePHPCRAdminBundle:Form:form_admin_fields.html.twig'
     exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'
 
 # Assetic Configuration
@@ -85,7 +88,7 @@ doctrine_phpcr:
                 - fr
         document_managers:
             default:
-                auto_mapping: false
+                auto_mapping: true
 
 knp_menu:
     twig: true
@@ -110,6 +113,7 @@ cmf_core:
         phpcr:
             basepath: /cms
             enabled: true
+            translation_strategy: ~
 
 cmf_content:
     persistence:
@@ -139,9 +143,8 @@ cmf_create:
     editor_base_path: /bundles/cmfcreate/vendor/ckeditor/
 
 cmf_seo:
-    title: CMF Sandbox - %%content_title%%
-    description: The Content Management Framework. %%content_description%%
-    alternate_locale: ~
+    title: %%content_title%%
+    description: %%content_description%%
 
 fos_user:
     db_driver:      orm
@@ -235,6 +238,7 @@ sonata_admin:
 
             - bundles/sonataadmin/App.js
             - bundles/sonataadmin/Admin.js
+            - bundles/pellrcms/js/Admin.js
     extensions:
         cmf_core.admin_extension.child:
             implements:
@@ -262,6 +266,8 @@ sonata_admin:
         cmf_seo.admin_extension:
             implements:
                 - Symfony\Cmf\Bundle\SeoBundle\SeoAwareInterface
+    security:
+        handler: sonata.admin.security.handler.role
 
     dashboard:
         blocks:
@@ -282,17 +288,6 @@ sonata_admin:
                 label: Users
                 items:
                     - sonata.user.admin.user
-                    - sonata.user.admin.group
-            routing:
-                label: URLs
-                items:
-                    - cmf_routing.route_admin
-                    - cmf_routing.redirect_route_admin
-            menu:
-                label: Menu
-                items:
-                    - cmf_menu.menu_admin
-                    - cmf_menu.node_admin
             cms_pages:
                 label: CMS Pages
                 items:
