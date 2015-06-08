@@ -53,6 +53,7 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\SeoBundle\SonataSeoBundle(),
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
+            new Ivory\CKEditorBundle\IvoryCKEditorBundle(),
 
             // user support
             new FOS\UserBundle\FOSUserBundle(),

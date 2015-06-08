@@ -45,7 +45,8 @@
         "nelmio/alice": "~1.7.2",
         "burgov/key-value-form-bundle": "~1.0",
         "genemu/form-bundle": "*",
-        "pellr/cms-bundle": "dev-master@dev"
+        "pellr/cms-bundle": "dev-master@dev",
+        "egeloen/ckeditor-bundle": "~3.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3",
