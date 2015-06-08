@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c6c688e4975bfe393dc4c95724af0fbc",
+    "hash": "199f3d03037e8c873e82e64031c17aab",
     "packages": [
         {
             "name": "burgov/key-value-form-bundle",
@@ -920,7 +920,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/migrations/zipball/058a4635ac9b80a5b1997df28a754e64b1425a1d",
+                "url": "https://api.github.com/repos/doctrine/migrations/zipball/67f02686c6c779ae50489728b91026bc8199720c",
                 "reference": "058a4635ac9b80a5b1997df28a754e64b1425a1d",
                 "shasum": ""
             },
@@ -2983,22 +2983,25 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/briancappello/CmsBundle.git",
-                "reference": "c07fbf8f9fee240c2783b13a6a9196a3a1241ff3"
+                "reference": "1d97967100aae9523ddcf1be819a3a743b2e1991"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/c07fbf8f9fee240c2783b13a6a9196a3a1241ff3",
-                "reference": "c07fbf8f9fee240c2783b13a6a9196a3a1241ff3",
+                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/1d97967100aae9523ddcf1be819a3a743b2e1991",
+                "reference": "1d97967100aae9523ddcf1be819a3a743b2e1991",
                 "shasum": ""
             },
             "require": {
                 "doctrine/phpcr-bundle": "~1.1",
                 "doctrine/phpcr-odm": "~1.1",
+                "egeloen/ckeditor-bundle": "~3.0",
                 "php": ">=5.3.3",
+                "sonata-project/seo-bundle": "~1.1.8",
                 "symfony-cmf/content-bundle": "~1.0",
                 "symfony-cmf/core-bundle": "~1.1",
                 "symfony-cmf/menu-bundle": "~1.2",
                 "symfony-cmf/routing-bundle": "~1.2",
+                "symfony-cmf/seo-bundle": "1.1.*",
                 "symfony/framework-bundle": "~2.3"
             },
             "require-dev": {
@@ -3042,7 +3045,7 @@
                 "source": "https://github.com/briancappello/CmsBundle/tree/master",
                 "issues": "https://github.com/briancappello/CmsBundle/issues"
             },
-            "time": "2015-03-02 06:19:26"
+            "time": "2015-06-08 02:46:04"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -3495,16 +3498,16 @@
         },
         {
             "name": "sonata-project/admin-bundle",
-            "version": "2.3.0",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataAdminBundle.git",
-                "reference": "68a836e5dbcb89a9bec36586186d4fdf3fedf6f5"
+                "reference": "03db550ece14b3bf1dddf700f7e0570aaef9c6fe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/68a836e5dbcb89a9bec36586186d4fdf3fedf6f5",
-                "reference": "68a836e5dbcb89a9bec36586186d4fdf3fedf6f5",
+                "url": "https://api.github.com/repos/sonata-project/SonataAdminBundle/zipball/03db550ece14b3bf1dddf700f7e0570aaef9c6fe",
+                "reference": "03db550ece14b3bf1dddf700f7e0570aaef9c6fe",
                 "shasum": ""
             },
             "require": {
@@ -3512,12 +3515,13 @@
                 "knplabs/knp-menu": ">=1.1.0,<3.0.0",
                 "knplabs/knp-menu-bundle": ">=1.1.0,<3.0.0",
                 "sensio/generator-bundle": "~2.3",
-                "sonata-project/block-bundle": "~2.2,>=2.2.7",
+                "sonata-project/block-bundle": "~2.2,>=2.2.7,<2.3",
                 "sonata-project/core-bundle": "~2.2",
                 "sonata-project/exporter": "~1.0",
                 "symfony/class-loader": "~2.3",
                 "symfony/config": "~2.3",
                 "symfony/console": "~2.3",
+                "symfony/expression-language": "~2.4",
                 "symfony/form": "~2.3",
                 "symfony/http-foundation": "~2.3",
                 "symfony/routing": "~2.3",
@@ -3570,7 +3574,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2014-09-09 13:52:07"
+            "time": "2015-03-23 08:10:17"
         },
         {
             "name": "sonata-project/block-bundle",
@@ -3949,23 +3953,23 @@
         },
         {
             "name": "sonata-project/doctrine-phpcr-admin-bundle",
-            "version": "1.2.1",
+            "version": "1.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sonata-project/SonataDoctrinePhpcrAdminBundle.git",
-                "reference": "317f726fb99372c45510d3a2dde1c9ae1cb5a379"
+                "reference": "f2d2b0254abf4ede7f8118fed6d93ea14815a62a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/317f726fb99372c45510d3a2dde1c9ae1cb5a379",
-                "reference": "317f726fb99372c45510d3a2dde1c9ae1cb5a379",
+                "url": "https://api.github.com/repos/sonata-project/SonataDoctrinePhpcrAdminBundle/zipball/f2d2b0254abf4ede7f8118fed6d93ea14815a62a",
+                "reference": "f2d2b0254abf4ede7f8118fed6d93ea14815a62a",
                 "shasum": ""
             },
             "require": {
                 "doctrine/phpcr-bundle": "~1.1",
                 "doctrine/phpcr-odm": "~1.1",
                 "php": ">=5.3.3",
-                "sonata-project/admin-bundle": ">=2.2.9,<=2.3.0",
+                "sonata-project/admin-bundle": ">=2.2.9,<2.4.0-dev",
                 "sonata-project/jquery-bundle": "1.8.*",
                 "symfony-cmf/tree-browser-bundle": "~1.0",
                 "symfony/framework-bundle": "~2.3",
@@ -4010,7 +4014,7 @@
                 "bootstrap",
                 "sonata"
             ],
-            "time": "2015-02-06 10:47:00"
+            "time": "2015-04-29 16:02:45"
         },
         {
             "name": "sonata-project/easy-extends-bundle",
