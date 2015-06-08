@@ -1,12 +1,11 @@
 {
-    "name": "briancappello/symfony-app",
+    "name": "pellr/symfony-cms-boilerplate",
     "description": "CMS application built with the Symfony Content Management Framework",
     "homepage": "http://cmf.symfony.com",
     "license": "MIT",
     "authors": [
         {
-            "name": "Symfony CMF Community",
-            "homepage": "https://github.com/symfony-cmf/SimpleCmsBundle/contributors"
+            "name": "Brian Cappello, and the Symfony CMF Community"
         }
     ],
     "autoload": {
@@ -14,7 +13,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "symfony/symfony": "~2.3",
+        "symfony/symfony": "2.6.*",
         "twig/extensions": "~1.0",
         "symfony/assetic-bundle": "~2.3",
         "symfony/swiftmailer-bundle": "~2.3",
@@ -45,7 +44,7 @@
         "knplabs/knp-paginator-bundle": "~2.4.1",
         "nelmio/alice": "~1.7.2",
         "burgov/key-value-form-bundle": "~1.0",
-        "genemu/form-bundle": "*",
+        "genemu/form-bundle": "~2.2.2",
         "pellr/cms-bundle": "dev-master@dev",
         "egeloen/ckeditor-bundle": "~3.0"
     },

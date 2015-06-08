@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "199f3d03037e8c873e82e64031c17aab",
+    "hash": "4c058db7872763fee9b86651a69d1dcf",
     "packages": [
         {
             "name": "burgov/key-value-form-bundle",
@@ -2983,18 +2983,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/briancappello/CmsBundle.git",
-                "reference": "1d97967100aae9523ddcf1be819a3a743b2e1991"
+                "reference": "0c26dded82813d2da57291366226e9f255f50c32"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/1d97967100aae9523ddcf1be819a3a743b2e1991",
-                "reference": "1d97967100aae9523ddcf1be819a3a743b2e1991",
+                "url": "https://api.github.com/repos/briancappello/CmsBundle/zipball/0c26dded82813d2da57291366226e9f255f50c32",
+                "reference": "0c26dded82813d2da57291366226e9f255f50c32",
                 "shasum": ""
             },
             "require": {
                 "doctrine/phpcr-bundle": "~1.1",
                 "doctrine/phpcr-odm": "~1.1",
                 "egeloen/ckeditor-bundle": "~3.0",
+                "genemu/form-bundle": "~2.2.2",
                 "php": ">=5.3.3",
                 "sonata-project/seo-bundle": "~1.1.8",
                 "symfony-cmf/content-bundle": "~1.0",
@@ -3045,7 +3046,7 @@
                 "source": "https://github.com/briancappello/CmsBundle/tree/master",
                 "issues": "https://github.com/briancappello/CmsBundle/issues"
             },
-            "time": "2015-06-08 02:46:04"
+            "time": "2015-06-08 03:25:57"
         },
         {
             "name": "phpcollection/phpcollection",
@@ -5333,16 +5334,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v2.6.4",
+            "version": "v2.6.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf"
+                "reference": "b06539573ccf64dd3a62852685f052553d02c5ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
-                "reference": "23b647f1e4eeb24a457d3c47f5f5046377d5a3bf",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/b06539573ccf64dd3a62852685f052553d02c5ba",
+                "reference": "b06539573ccf64dd3a62852685f052553d02c5ba",
                 "shasum": ""
             },
             "require": {
@@ -5406,7 +5407,8 @@
                 "ircmaxell/password-compat": "~1.0",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0",
-                "propel/propel1": "~1.6"
+                "propel/propel1": "~1.6",
+                "symfony/phpunit-bridge": "~2.7"
             },
             "type": "library",
             "extra": {
@@ -5432,20 +5434,20 @@
             ],
             "authors": [
                 {
-                    "name": "Symfony Community",
-                    "homepage": "http://symfony.com/contributors"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
                 }
             ],
             "description": "The Symfony PHP framework",
-            "homepage": "http://symfony.com",
+            "homepage": "https://symfony.com",
             "keywords": [
                 "framework"
             ],
-            "time": "2015-02-02 18:02:30"
+            "time": "2015-05-29 22:55:07"
         },
         {
             "name": "twig/extensions",
